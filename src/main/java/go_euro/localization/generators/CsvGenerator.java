@@ -38,7 +38,7 @@ public class CsvGenerator {
 			
 			writer.writeAll(csvData);
 			writer.close();
-			System.out.println("The csv file was generated with out suggestions !!");
+			System.out.println("The csv file was generated with our suggestions !!");
 			
 		} catch (UnsupportedEncodingException e) {
 			throw new IllegalCharsetNameException("the enconde that was send is not acceptable");

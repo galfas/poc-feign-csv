@@ -3,10 +3,9 @@ package go_euro.localization.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class LocationConsolidatedTest {
 	
@@ -22,6 +21,7 @@ public class LocationConsolidatedTest {
 	@Test
 	public void shouldHaveAHeaderValue(){
 		Assert.assertNotNull(locationConsolidated.getCsvHeader());
+		
 	}
 	
 	@Test
@@ -29,10 +29,10 @@ public class LocationConsolidatedTest {
 		String[] csvInformation = locationConsolidated.getDisplayAttributes().get(0);
 		String[] csvInformation2 = locationConsolidated.getDisplayAttributes().get(1);
 		
-		Assert.assertNotNull(csvInformation[0].equals(1));
-		Assert.assertNotNull(csvInformation[1].equals("test 1"));
-		Assert.assertNotNull(csvInformation2[2].equals("location2"));
-		Assert.assertNotNull(csvInformation2[3].equals(Long.valueOf(200)));
+		Assert.assertEquals(csvInformation[0],("1"));
+		Assert.assertEquals(csvInformation[1], ("test 1"));
+		Assert.assertEquals(csvInformation2[2], ("location2"));
+		Assert.assertEquals(Double.valueOf(csvInformation2[3]), (Double.valueOf(200)));
 	}
 	
 	@Test
